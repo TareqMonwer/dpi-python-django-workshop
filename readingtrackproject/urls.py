@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 # Easiest view
@@ -24,7 +24,7 @@ def hello(request):
     """
     Returns string as http response.
     """
-    return HttpResponse("hello world")
+    return render(request, 'index.html')
 
 
 urlpatterns = [

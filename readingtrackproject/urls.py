@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 # Easiest view
@@ -24,7 +24,12 @@ def hello(request):
     """
     Returns string as http response.
     """
-    return HttpResponse("hello world")
+    # Usign variables to pass as context to template.
+    page_title = 'Django Template Language Example (DTL)'
+    message = 'PYTHON & DJANGO WORKSHOP FROM DAFFODIL POLYTECHNIC'
+    # NOTE: context must be dictionary
+    return render(request, 'index.html',
+                  context={'page_title': page_title, 'message': message})
 
 
 urlpatterns = [

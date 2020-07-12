@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ page_title }}</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<h1 style="color: #02c485">{{ message }}</h1>
+{% block title %}
+    {{ page_title }}
+{% endblock %}
 
-</body>
-</html>
+{% block content %}
+    <h1 style="color: #02c485">{{ message }}</h1>
+{% endblock %}

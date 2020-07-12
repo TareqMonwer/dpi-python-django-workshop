@@ -24,7 +24,12 @@ def hello(request):
     """
     Returns string as http response.
     """
-    return render(request, 'index.html')
+    # Usign variables to pass as context to template.
+    page_title = 'Django Template Language Example (DTL)'
+    message = 'PYTHON & DJANGO WORKSHOP FROM DAFFODIL POLYTECHNIC'
+    # NOTE: context must be dictionary
+    return render(request, 'index.html',
+                  context={'page_title': page_title, 'message': message})
 
 
 urlpatterns = [

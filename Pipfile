@@ -9,6 +9,7 @@ pylint = "*"
 [packages]
 django = "*"
 pyjokes = "*"
+django-crispy-forms = "*"
 
 [requires]
 python_version = "3.8"

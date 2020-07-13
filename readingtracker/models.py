@@ -9,8 +9,8 @@ class Plan(models.Model):
     )
 
     plan_name = models.CharField(max_length=255)
-    time_starts = models.DateField()
-    time_ends = models.DateField()
+    time_starts = models.DateTimeField()
+    time_ends = models.DateTimeField()
     label = models.CharField(choices=LABELS, 
                              default='m',
                              max_length=1)

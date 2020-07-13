@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('new/', views.CreatePlan.as_view(), name='add'),
 ]

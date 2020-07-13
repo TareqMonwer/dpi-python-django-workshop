@@ -1,11 +1,11 @@
-from django.shortcuts import render
+from django.views.generic import CreateView
 import pyjokes
 
+from .models import Plan
+from .forms import PlanCreateForm
 
-def home(request):
-    context = {
-        'page_title': 'Workshop',
-        'message': 'A message',
-        'jokes': pyjokes.get_jokes()[:10]
-    }
-    return render(request, 'index.html', context)
+
+class CreatePlan(CreateView):
+    model = Plan
+    form_class = PlanCreateForm
+    template_name = 'readingtracker/create_record.html'

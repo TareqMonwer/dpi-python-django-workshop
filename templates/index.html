@@ -9,6 +9,14 @@
 {% block content %}
     <h1 style="color: #02c485">{{ message }}</h1>
     
+
+    <h3>Let's enjoy some jokes</h3>
+
+    {% for joke in jokes %}
+        <p style="margin: 20px; 
+        {% if forloop.counter == 5 %}background: yellow; display: inline;{% endif %}">{{ forloop.counter }}| {{ joke|truncatewords:10 }}</p>
+    {% endfor %}
+
     <h3>DPI Students <span id="titlewrapper">at Annual Picnic</span></h3>
     <img id="picwrapper" src="{% static 'images/students.jpg' %}" onclick="changeContent()">
 

@@ -43,8 +43,8 @@ recommends to use as package manager.
  + DTL and context variables, Template inheritance
  + Using static files with django (css, js)
  + HTTP verbs basics (GET, POST, DELETE)
- + Django ORM and sqlite
  + Reading Track app (Models, Routes, Views and Templates)
+ + Django ORM and sqlite+ Django ORM and sqlite
  + Template variables, filters and tags
  + CRUD Operation for reading track app models
  + Exploring django-admin (collectstatic)

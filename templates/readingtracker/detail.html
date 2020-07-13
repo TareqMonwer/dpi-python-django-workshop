@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 bg-light rounded p-3">
+                <h1>{{ object }}</h1>
+                Priority: <span class="badge 
+                {% if object.label == 't' %} badge-danger
+                {% elif object.label == 'm' %} badge-warning
+                {% elif object.label == 'l' %} badge-primary {% endif %}">{{ object.get_label_display }}</span>
+                <hr>
+                Starting Date: {{ object.time_starts }}
+                Ending Date: {{ object.time_ends }}
+                <hr>
+                <br>
+                <a href="{% url 'delete' object.pk %}" class="btn btn-sm btn-danger">Delete</a>
+                <a href="{% url 'update' object.pk %}" class="btn btn-sm btn-primary">Change</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

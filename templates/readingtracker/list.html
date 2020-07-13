@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            {% for object in object_list %}
+            <div class="col-md-3 bg-light rounded m-3">
+                <h1>
+                    <a href="{% url 'details' object.pk %}">{{ object }}</a>
+                </h1>
+                Priority: <span class="badge 
+                {% if object.label == 't' %} badge-danger
+                {% elif object.label == 'm' %} badge-warning
+                {% elif object.label == 'l' %} badge-primary {% endif %}">{{ object.get_label_display }}</span>
+                <hr>
+                Starting Date: {{ object.time_starts }}
+                Ending Date: {{ object.time_ends }}
+            </div>
+            {% empty %}
+                <h4>You have no plans to show</h4>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

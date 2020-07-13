@@ -14,26 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-
-from django.shortcuts import render
-
-
-# Easiest view
-def hello(request):
-    """
-    Returns string as http response.
-    """
-    # Usign variables to pass as context to template.
-    page_title = 'Django Template Language Example (DTL)'
-    message = 'PYTHON & DJANGO WORKSHOP FROM DAFFODIL POLYTECHNIC'
-    # NOTE: context must be dictionary
-    return render(request, 'index.html',
-                  context={'page_title': page_title, 'message': message})
+from django.urls import path, include
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # requesting for http response from '/' route
-    path('', hello, name='hello'),
+    path('', include('readingtracker.urls')),
 ]

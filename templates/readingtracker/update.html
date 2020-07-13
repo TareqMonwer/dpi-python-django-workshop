@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+{% endblock css %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form action="" method="post">
+                {% csrf_token %}
+            
+                {{form|crispy}}
+                <input type="submit" value="Add new record">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(function () {
+      $("#id_time_starts").datetimepicker({
+        format: 'd/m/Y H:i',
+      });
+      $("#id_time_ends").datetimepicker({
+        format: 'd/m/Y H:i',
+      });
+    });
+    console.log("clal");
+</script>
+{% endblock %}

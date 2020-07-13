@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, DetailView, ListView, DeleteView
+from django.views.generic import CreateView, DetailView, ListView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 import pyjokes
 
@@ -26,3 +26,9 @@ class PlanDelete(DeleteView):
     model = Plan
     template_name = 'readingtracker/delete_confirm.html'
     success_url = reverse_lazy('list')
+
+
+class PlanUpdate(UpdateView):
+    model = Plan
+    form_class = PlanCreateForm
+    template_name = 'readingtracker/update.html'

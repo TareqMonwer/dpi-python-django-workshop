@@ -1,4 +1,4 @@
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 import pyjokes
 
 from .models import Plan
@@ -9,3 +9,8 @@ class CreatePlan(CreateView):
     model = Plan
     form_class = PlanCreateForm
     template_name = 'readingtracker/create_record.html'
+
+
+class PlanDetail(DetailView):
+    model = Plan
+    template_name = 'readingtracker/detail.html'

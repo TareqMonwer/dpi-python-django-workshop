@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Plan(models.Model):
@@ -18,3 +19,6 @@ class Plan(models.Model):
 
     def __str__(self):
         return self.plan_name
+
+    def get_absolute_url(self):
+        return reverse('details', args=[str(self.id)])
